@@ -65,3 +65,53 @@ function b({faction: a, stats: t, active: i, compact: r=!1, onSelect: n, index: 
                     children: [e.jsx("span", {
                         className: "size-1.5 animate-pulse rounded-full bg-white"
                     }), t.live, " Live"]
+                })]
+            }), e.jsxs("div", {
+                children: [e.jsx("h3", {
+                    className: s("font-black tracking-tight text-white", r ? "text-lg sm:text-xl" : "text-2xl sm:text-3xl"),
+                    style: {
+                        textShadow: `0 0 24px rgb(${a.accentRgb} / 0.5)`
+                    },
+                    children: a.label
+                }), !r && e.jsx("p", {
+                    className: "mt-1 line-clamp-2 text-xs text-zinc-300/90 sm:text-sm",
+                    children: a.tagline
+                }), e.jsxs("div", {
+                    className: s("flex flex-wrap items-center gap-3 text-xs font-semibold text-zinc-200", r ? "mt-2" : "mt-4"),
+                    children: [e.jsxs("span", {
+                        className: "inline-flex items-center gap-1",
+                        children: [e.jsx(x, {
+                            className: "size-3.5",
+                            style: {
+                                color: a.accent
+                            },
+                            "aria-hidden": !0
+                        }), t.total, " Players"]
+                    }), t.kick > 0 && e.jsxs("span", {
+                        className: "rounded-md bg-[#53fc18]/20 px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#53fc18]",
+                        children: ["Kick ", t.kick]
+                    }), t.youtube > 0 && e.jsxs("span", {
+                        className: "rounded-md bg-[#ff0033]/20 px-1.5 py-0.5 text-[10px] font-bold uppercase text-[#ff6b8a]",
+                        children: ["YT ", t.youtube]
+                    })]
+                }), !r && t.avatars.length > 0 && e.jsx("div", {
+                    className: "mt-3 flex -space-x-2",
+                    children: t.avatars.slice(0, 5).map( (l, d) => e.jsx("img", {
+                        src: l,
+                        alt: "",
+                        className: "size-8 rounded-full border-2 border-[#0b1020] object-cover ring-1 ring-white/20",
+                        loading: "lazy",
+                        referrerPolicy: "no-referrer"
+                    }, `${l}-${d}`))
+                })]
+            }), !r && e.jsxs("span", {
+                className: "mt-4 inline-flex w-fit items-center gap-1.5 rounded-full border border-white/20 bg-black/40 px-3 py-1.5 text-xs font-bold text-white backdrop-blur-sm transition group-hover:border-[rgb(var(--faction-rgb)/0.6)] group-hover:text-(--faction-accent)",
+                children: [a.gangPath ? "View gang roster" : "Explore Members", e.jsx(p, {
+                    className: "size-3.5 transition group-hover:translate-x-0.5",
+                    "aria-hidden": !0
+                })]
+            })]
+        })]
+    })
+}
+export {b as P};
